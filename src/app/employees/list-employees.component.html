@@ -1,0 +1,49 @@
+<!-- <div *ngFor="let employee of employees">
+  <app-display-employee-information [employee]="employee"></app-display-employee-information>
+</div> -->
+
+<!-- <br/>
+<button class="btn btn-primary" (click)="moveToNext()">Move To Next</button>
+<br /><br/>
+<div *ngFor="let employee of employees">
+<app-display-employee-information [employee]="employeeDisplay" (notify)="handleNotify($event)">
+</app-display-employee-information>
+</div> -->
+
+<br />
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search by name..." [(ngModel)]="searchTerm" />
+</div>
+
+<br />
+<div class="form-group">
+  <button class="btn btn-primary" (click)="moveToNext()">View Next Employee</button>
+  <button class="btn btn-primary pull-right" (click)="changeEmployeeName()">Change Employee Name</button>
+</div>
+<br />
+
+<div *ngIf="employeeData">
+  <h6>{{employeeData.name +'-->'+employeeData.gender}}</h6>
+</div>
+
+<div *ngFor="let employee of filteredEmployees">
+  <app-display-employee-information [employee]="employee" [searchTerm]="searchTerm" 
+  (notifydeleteEmployee)="deleteEmployee($event)">
+  </app-display-employee-information>
+</div>
+
+
+<!-- <div *ngFor="let employee of filteredEmployees">
+  <div (click)="goToDetails(employee.id)" class="pointCursor">
+    <app-display-employee-information [employee]="employee" [searchTerm]="searchTerm" 
+    (notify)="handleNotify($event)" (notifydeleteEmployee)="deleteEmployee($event)">
+    </app-display-employee-information>
+  </div>
+</div> -->
+
+<!-- <div *ngFor="let employee of employees | employeeFilter:searchTerm">
+  <div (click)="goToDetails(employee.id)" class="pointCursor">
+    <app-display-employee-information [employee]="employee" (notify)="handleNotify($event)">
+    </app-display-employee-information>
+  </div>
+</div> -->

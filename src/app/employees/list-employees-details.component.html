@@ -1,0 +1,73 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{employee.name}}</h3>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+
+      <div class="col-xs-12">
+
+        <div class="row" class="vertical-align">
+
+          <div class="col-xs-2">
+            <img class="imageClass" [src]="employee.photoPath" />
+          </div>
+
+          <div class="col-xs-10">
+            <div class="row">
+              <div class="col-xs-2">
+                Gender
+              </div>
+              <div class="col-xs-10">
+                {{employee.gender}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-2">
+                DateOfBirth
+              </div>
+              <div class="col-xs-10">
+                {{employee.dateOfBirth | date}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-2">
+                PhoneNumber
+              </div>
+              <div class="col-xs-10">
+                {{employee.phoneNumber}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-2">
+                ContactPreference
+              </div>
+              <div class="col-xs-10">
+                {{employee.contactPreference}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-2">
+                Email
+              </div>
+              <div class="col-xs-10">
+                {{employee.email}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <a class="btn btn-primary" [routerLink]="['/list',{id:employee.id}]" queryParamsHandling="merge" [queryParams]="{'newParam' : 'newValue'}">Go Back</a>
+    <!-- <button class="btn btn-primary" (click)="goBack()">Go Back</button> -->
+    <button class="btn btn-primary pull-right" (click)="viewNext()" pull-right>View Next</button>
+  </div>
+</div>
